@@ -27,5 +27,28 @@ function countChar(string, char) {
   return count;
 }
 
+function countCharReduce(string, char) {
+  return string.split("").reduce((count, chars) => {
+    return chars === char ? count + 1 : count;
+  }, 0);
+}
+
 console.log(countBs("Buzzy Bees Bumbling bees"));
-console.log(countChar("racecar", "e"));
+console.log(countChar("racecar", "a"));
+
+// practicing with reduce()
+
+function countAs(string) {
+  return string.split("").reduce((count, char) => {
+    return char === "A" ? count + 1 : count;
+  }, 0);
+}
+
+function countCharReduce(string, char) {
+  return string.split("").reduce((count, chars) => {
+    return chars === char ? count + 1 : count;
+  }, 0);
+}
+
+console.log(countAs("Apples And Pears"));
+console.log(countCharReduce("racecar", "a"));
