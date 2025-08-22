@@ -25,4 +25,31 @@ function arrayToList(arr) {
   }
   return list;
 }
+
 console.log(arrayToList([1, 2, 3]));
+
+function listToArray(list) {
+  if (list === null) return []; // edge case
+  let arr = []; // start with an empty array
+  for (let node = list; node; node = node.rest) {
+    // go through each node in the list, for each node it adds the value to array, node.rest moves to the next node
+    arr.push(node.value);
+  }
+  return arr;
+}
+
+console.log(listToArray(arrayToList([1, 2, 3])));
+
+// alternatively
+
+function secondListToArray(list) {
+  let arr = [];
+  let node = list;
+
+  while (node !== null) {
+    arr.push(node.value);
+    node = node.rest;
+  }
+  return arr;
+}
+console.log(secondListToArray(arrayToList([1, 2, 3])));
